@@ -1,0 +1,82 @@
+/* Import des typographies */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+/* ------------ règles générales ------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* site autocentré - largeur définie (950px dans l'exemple) */
+
+#site {
+  width: 950px;
+  margin: 0 auto;
+  font-family: Roboto;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0 0 0);
+}
+
+/* ------------ en-tête du site ------------ */
+
+header {
+  display: flex;
+  align-items: flex-end;
+  padding-top: 10px;
+}
+
+header h1 {
+  background: url('../imagesHabillage/monogrammeSprite.png') no-repeat;
+  width: 100px;
+  height: 100px;
+  flex-basis: 130px;
+  background-position: 0 0;
+  transition: background-position 1s;
+}
+
+header h1:hover {
+   background-position: 0 -100px;
+   transition: background-position 2s;
+}
+
+
+header h2 {
+  font-size: 35px;
+  flex-basis: 400px;
+}
+
+header nav ul {
+  display: flex;
+  list-style-type: none;
+}
+
+header nav ul li {
+  font-size: 20px;
+  display: block; /*facilite la sélection */
+  margin-right: 20px; /* espace entre les items du menu */
+}
+
+header nav ul li:last-child {
+  margin-right: 0; /* pas d'esapce après le dernier item du menu */
+}
+
+
+
+header nav ul li a:hover {
+  color: rgb(228 84 14);
+}
+
+header nav ul li:nth-child(3) a:hover {
+   color: rgb(0 0 255);
+   text-decoration: underline;
+}
+
+header nav ul li a.selected {
+  color: rgb(228 84 14);
+  text-decoration: underline;
+}
