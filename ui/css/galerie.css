@@ -1,0 +1,26 @@
+/*
+   feuille de styles galerie
+   @author Didier Tirard © nov 2021
+*/
+
+* {
+  margin:0;
+  padding:0;
+  border:0;
+  box-sizing: border-box; /* ajuster le contenu des images à la largeur des colonnes */
+}
+
+main section {
+  padding: 7px; /* espacement autour de la galerie */
+}
+
+main section.colonnes {
+  line-height: 0; /* coller verticalement les images */
+  column-count: 4;
+  column-gap: 0px; /* annuler l'espacement horizontal */
+}
+
+main section.colonnes img {
+  max-width:100%; /* adapter les images à la largeur des colonnes */
+  padding: 7px; /* epsacement autour des images */
+}

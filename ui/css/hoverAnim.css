@@ -1,0 +1,72 @@
+/*
+   feuille de styles hoverAnim
+   @author Didier Tirard © nov 2021
+ */
+
+* {
+   padding: 0;
+   margin: 0;
+}
+
+section {
+   display: flex;
+   flex-wrap: wrap;
+   width: 480px;
+}
+
+.col {
+   max-width: 100px;
+   flex-basis: 100px;
+   padding: 0 15px 0 15px;
+}
+
+.single-image {
+   position: relative;
+   margin-bottom: 30px;
+   height: 100px;
+}
+
+.single-image .overlay {
+   position: absolute;
+   top: 0px;
+   width: 100px;
+   height: 100px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   opacity: 0;
+   z-index: 10;
+   transform: scale(0.8); /* agit sur la taille du texte*/
+   transition: .6s ease;
+}
+
+.single-image:hover .overlay {
+   opacity: 1;
+}
+
+.single-image::after {
+   content: attr(data-descr); /* récupérer le contenu à afficher sur l'image */
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   right: 0px;
+   bottom: 0px;
+   background: rgba(17 53 195/70%);
+   color: rgb(255 255 255);
+   font-size: 20px;
+   transform: scale(0);
+   transition: .5s ease;
+   /* centrer l'image */
+   text-align: center;
+   padding: 40px 0;
+}
+
+/* Effet N°2 */
+   .single-image:hover::after {
+      transform: scale(0.8);
+   }
+
+   .single-image .overlay p {
+      color: rgb(255 255 255);
+      font-size: 20px;
+   }
