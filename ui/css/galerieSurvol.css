@@ -1,0 +1,73 @@
+/*
+   feuille de styles hoverAnim
+   @author Didier Tirard © dec 2021
+ */
+
+:root {
+    font-family: helvetica, sans-serif;
+}
+
+* {
+   padding: 0;
+   margin: 0;
+}
+
+section {
+   display: flex;
+   flex-wrap: wrap;
+   width: 480px; /* largeur de la galerie */
+}
+
+.col {
+   padding: 15px; /* espacement des vignettes */
+}
+
+.single-image {
+   position: relative; /* bien positionner un background au survol */
+   height: 100px;
+}
+
+.single-image img {
+   width: 100px; /* redimensionner les images trop grandes */
+}
+
+
+
+/* ----- Réglages du survol ----- */
+
+
+/* Définition du texte au survol */
+.single-image:after {
+   content: attr(data-descr); /* récupérer le contenu à afficher sur l'image depuis l'attribut data-descr en html */
+   position: absolute;
+   top: 0px;
+   left: 0px;
+   right: 0px;
+   bottom: 0px;
+   color: rgb(255 255 255);
+   font-size: 20px;
+   opacity: 0;
+   transition: .5s ease; /* vitesse de l'effet de transition */
+   text-align: center;
+   padding: 40px 0;
+}
+
+/* Affichage au survol */
+.single-image:hover:after {
+   opacity: 1;
+   transition: 0.5s ease;
+}
+
+/* Survol et image noir et blanc */
+.single-image.bw:hover img {
+   filter: grayscale(100%); /* filtre noir et blanc */
+}
+
+/* Survol et background */
+.single-image.bg:hover:after {
+   background: rgba(0 0 0/20%);
+}
+
+/* .single-image:not(.bg):hover img {
+   filter: grayscale(100%);
+} */
